@@ -199,28 +199,49 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.box').forEach(function (box) {
-                const lifeCounter = box.querySelector('.life-counter');
-
-                box.querySelectorAll('.adjust button').forEach(function (button) {
+            // Converting NodeList to Array for compatibility with Safari 9
+            Array.prototype.slice.call(document.querySelectorAll('.box')).forEach(function (box) {
+                // Find the life counter element inside the box
+                var lifeCounter = box.querySelector('.life-counter');
+    
+                // Find all the adjust buttons inside the box
+                Array.prototype.slice.call(box.querySelectorAll('.adjust button')).forEach(function (button) {
                     button.addEventListener('click', function () {
-                        const value = parseInt(lifeCounter.textContent, 10);
-                        lifeCounter.textContent = this.textContent === '+' ? value + 1 : Math.max(0, value - 1);
+                        // Get the current value of the life counter (fallback to 0 if invalid)
+                        var value = parseInt(lifeCounter.textContent, 10) || 0;
+    
+                        // Update the life counter based on the button clicked
+                        if (this.textContent === '+') {
+                            lifeCounter.textContent = value + 1;
+                        } else {
+                            lifeCounter.textContent = Math.max(0, value - 1);
+                        }
                     });
                 });
-
-                box.querySelectorAll('.secondary-values div').forEach(function (secondary) {
-                    const counter = secondary.querySelector('.secondary-counter');
-
-                    secondary.querySelectorAll('button').forEach(function (button) {
+    
+                // Find all secondary values within the box
+                Array.prototype.slice.call(box.querySelectorAll('.secondary-values div')).forEach(function (secondary) {
+                    // Find the counter inside each secondary value div
+                    var counter = secondary.querySelector('.secondary-counter');
+    
+                    // Find all the buttons inside the secondary value div
+                    Array.prototype.slice.call(secondary.querySelectorAll('button')).forEach(function (button) {
                         button.addEventListener('click', function () {
-                            const value = parseInt(counter.textContent, 10);
-                            counter.textContent = this.textContent === '+' ? value + 1 : Math.max(0, value - 1);
+                            // Get the current value of the secondary counter (fallback to 0 if invalid)
+                            var value = parseInt(counter.textContent, 10) || 0;
+    
+                            // Update the secondary counter based on the button clicked
+                            if (this.textContent === '+') {
+                                counter.textContent = value + 1;
+                            } else {
+                                counter.textContent = Math.max(0, value - 1);
+                            }
                         });
                     });
                 });
             });
         });
     </script>
+    
 </body>
 </html>
