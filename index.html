@@ -70,11 +70,22 @@
         }
 
         .secondary-values div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 15px;
-        }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Per posizionare l'icona sopra */
+}
+
+.secondary-values .icon {
+    font-size: 1.5em; /* Dimensione delle icone */
+    line-height: 1;
+    position: absolute;
+    top: -7px; /* Sposta l'icona sopra il contatore */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
         .secondary-values button {
             background: none;
@@ -89,15 +100,10 @@
         }
 
         .secondary-values p {
-            font-size: 2em;  
+            font-size: 1.5em;  
         }
 
-        .icon {
-            width: 30px;
-            height: 30px;
-            background: black;
-            border-radius: 50%;
-        }
+        
 
         .box:nth-child(1) { background-color: #ffe6e6; }
         .box:nth-child(2) { background-color: #e6ffe6; }
@@ -113,21 +119,26 @@
             <button class="increase">+</button>
         </div>
         <div class="secondary-values">
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
+            <div class="secondary-values">
+                <div>
+                    <span class="icon">🛡️</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">💧</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">⚡</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+            </div>            
         </div>
     </div>
     <div class="box">
@@ -137,21 +148,26 @@
             <button class="increase">+</button>
         </div>
         <div class="secondary-values">
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
+            <div class="secondary-values">
+                <div>
+                    <span class="icon">🛡️</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">💧</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">⚡</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+            </div>            
         </div>
     </div>
     <div class="box">
@@ -161,21 +177,26 @@
             <button class="increase">+</button>
         </div>
         <div class="secondary-values">
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
+            <div class="secondary-values">
+                <div>
+                    <span class="icon">🛡️</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">💧</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">⚡</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+            </div>            
         </div>
     </div>
     <div class="box">
@@ -185,21 +206,26 @@
             <button class="increase">+</button>
         </div>
         <div class="secondary-values">
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
-            <div>
-                <button class="decrease">-</button>
-                <p class="secondary-counter">0</p>
-                <button class="increase">+</button>
-            </div>
+            <div class="secondary-values">
+                <div>
+                    <span class="icon">🛡️</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">💧</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+                <div>
+                    <span class="icon">⚡</span>
+                    <button class="decrease">-</button>
+                    <p class="secondary-counter">0</p>
+                    <button class="increase">+</button>
+                </div>
+            </div>            
         </div>
     </div>
     <script>
