@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,8 @@
             width: 45%;
             height: 45%;
             margin: 0.5%;
-            background-color: #ffe6e6; /* Cambia colore per ogni box */
+            background-color: #ffe6e6;
+            /* Cambia colore per ogni box */
             border-radius: 20px;
             display: flex;
             flex-direction: column;
@@ -70,22 +72,21 @@
         }
 
         .secondary-values div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    position: relative; /* Per posizionare l'icona sopra */
-}
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
 
-.secondary-values .icon {
-    font-size: 1.5em; /* Dimensione delle icone */
-    line-height: 1;
-    position: absolute;
-    top: -7px; /* Sposta l'icona sopra il contatore */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
+        .secondary-values .icon {
+            font-size: 1.5em;
+            line-height: 1;
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
         .secondary-values button {
             background: none;
@@ -100,179 +101,187 @@
         }
 
         .secondary-values p {
-            font-size: 1.5em;  
+            font-size: 1.5em;
         }
 
-        
+        .box:nth-child(1) {
+            background-color: #ffe6e6;
+        }
 
-        .box:nth-child(1) { background-color: #ffe6e6; }
-        .box:nth-child(2) { background-color: #e6ffe6; }
-        .box:nth-child(3) { background-color: #e6e6ff; }
-        .box:nth-child(4) { background-color: #fff5e6; }
+        .box:nth-child(2) {
+            background-color: #e6ffe6;
+        }
+
+        .box:nth-child(3) {
+            background-color: #e6e6ff;
+        }
+
+        .box:nth-child(4) {
+            background-color: #fff5e6;
+        }
     </style>
 </head>
+
 <body>
-    <div class="box">
+    <!-- Box 1 -->
+    <div class="box" id="box-0">
         <div class="adjust">
-            <button class="decrease">-</button>
-            <p class="life-counter">40</p>
-            <button class="increase">+</button>
+            <button id="life-decrease-0">-</button>
+            <p id="life-counter-0" class="life-counter">40</p>
+            <button id="life-increase-0">+</button>
         </div>
         <div class="secondary-values">
-            <div class="secondary-values">
-                <div>
-                    <span class="icon">🛡️</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">💧</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">⚡</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-            </div>            
+            <div>
+                <span class="icon">🛡️</span>
+                <button id="shield-decrease-0">-</button>
+                <p id="shield-counter-0" class="secondary-counter">0</p>
+                <button id="shield-increase-0">+</button>
+            </div>
+            <div>
+                <span class="icon">💧</span>
+                <button id="water-decrease-0">-</button>
+                <p id="water-counter-0" class="secondary-counter">0</p>
+                <button id="water-increase-0">+</button>
+            </div>
+            <div>
+                <span class="icon">⚡</span>
+                <button id="lightning-decrease-0">-</button>
+                <p id="lightning-counter-0" class="secondary-counter">0</p>
+                <button id="lightning-increase-0">+</button>
+            </div>
         </div>
     </div>
-    <div class="box">
+    <!-- Box 2 -->
+    <div class="box" id="box-1">
         <div class="adjust">
-            <button class="decrease">-</button>
-            <p class="life-counter">40</p>
-            <button class="increase">+</button>
+            <button id="life-decrease-1">-</button>
+            <p id="life-counter-1" class="life-counter">40</p>
+            <button id="life-increase-1">+</button>
         </div>
         <div class="secondary-values">
-            <div class="secondary-values">
-                <div>
-                    <span class="icon">🛡️</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">💧</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">⚡</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-            </div>            
+            <div>
+                <span class="icon">🛡️</span>
+                <button id="shield-decrease-1">-</button>
+                <p id="shield-counter-1" class="secondary-counter">0</p>
+                <button id="shield-increase-1">+</button>
+            </div>
+            <div>
+                <span class="icon">💧</span>
+                <button id="water-decrease-1">-</button>
+                <p id="water-counter-1" class="secondary-counter">0</p>
+                <button id="water-increase-1">+</button>
+            </div>
+            <div>
+                <span class="icon">⚡</span>
+                <button id="lightning-decrease-1">-</button>
+                <p id="lightning-counter-1" class="secondary-counter">0</p>
+                <button id="lightning-increase-1">+</button>
+            </div>
         </div>
     </div>
-    <div class="box">
+    <!-- Box 3 -->
+    <div class="box" id="box-2">
         <div class="adjust">
-            <button class="decrease">-</button>
-            <p class="life-counter">40</p>
-            <button class="increase">+</button>
+            <button id="life-decrease-2">-</button>
+            <p id="life-counter-2" class="life-counter">40</p>
+            <button id="life-increase-2">+</button>
         </div>
         <div class="secondary-values">
-            <div class="secondary-values">
-                <div>
-                    <span class="icon">🛡️</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">💧</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">⚡</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-            </div>            
+            <div>
+                <span class="icon">🛡️</span>
+                <button id="shield-decrease-2">-</button>
+                <p id="shield-counter-2" class="secondary-counter">0</p>
+                <button id="shield-increase-2">+</button>
+            </div>
+            <div>
+                <span class="icon">💧</span>
+                <button id="water-decrease-2">-</button>
+                <p id="water-counter-2" class="secondary-counter">0</p>
+                <button id="water-increase-2">+</button>
+            </div>
+            <div>
+                <span class="icon">⚡</span>
+                <button id="lightning-decrease-2">-</button>
+                <p id="lightning-counter-2" class="secondary-counter">0</p>
+                <button id="lightning-increase-2">+</button>
+            </div>
         </div>
     </div>
-    <div class="box">
+    <!-- Box 4 -->
+    <div class="box" id="box-3">
         <div class="adjust">
-            <button class="decrease">-</button>
-            <p class="life-counter">40</p>
-            <button class="increase">+</button>
+            <button id="life-decrease-3">-</button>
+            <p id="life-counter-3" class="life-counter">40</p>
+            <button id="life-increase-3">+</button>
         </div>
         <div class="secondary-values">
-            <div class="secondary-values">
-                <div>
-                    <span class="icon">🛡️</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">💧</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-                <div>
-                    <span class="icon">⚡</span>
-                    <button class="decrease">-</button>
-                    <p class="secondary-counter">0</p>
-                    <button class="increase">+</button>
-                </div>
-            </div>            
+            <div>
+                <span class="icon">🛡️</span>
+                <button id="shield-decrease-3">-</button>
+                <p id="shield-counter-3" class="secondary-counter">0</p>
+                <button id="shield-increase-3">+</button>
+            </div>
+            <div>
+                <span class="icon">💧</span>
+                <button id="water-decrease-3">-</button>
+                <p id="water-counter-3" class="secondary-counter">0</p>
+                <button id="water-increase-3">+</button>
+            </div>
+            <div>
+                <span class="icon">⚡</span>
+                <button id="lightning-decrease-3">-</button>
+                <p id="lightning-counter-3" class="secondary-counter">0</p>
+                <button id="lightning-increase-3">+</button>
+            </div>
         </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Converting NodeList to Array for compatibility with Safari 9
-            Array.prototype.slice.call(document.querySelectorAll('.box')).forEach(function (box) {
-                // Find the life counter element inside the box
-                var lifeCounter = box.querySelector('.life-counter');
-    
-                // Find all the adjust buttons inside the box
-                Array.prototype.slice.call(box.querySelectorAll('.adjust button')).forEach(function (button) {
-                    button.addEventListener('click', function () {
-                        // Get the current value of the life counter (fallback to 0 if invalid)
-                        var value = parseInt(lifeCounter.textContent, 10) || 0;
-    
-                        // Update the life counter based on the button clicked
-                        if (this.textContent === '+') {
-                            lifeCounter.textContent = value + 1;
-                        } else {
-                            lifeCounter.textContent = Math.max(0, value - 1);
-                        }
-                    });
+            // Function to update counters
+            function setupCounter(decreaseId, counterId, increaseId) {
+                var decreaseButton = document.getElementById(decreaseId);
+                var increaseButton = document.getElementById(increaseId);
+                var counterElement = document.getElementById(counterId);
+
+                decreaseButton.addEventListener('click', function () {
+                    var value = parseInt(counterElement.textContent, 10) || 0;
+                    counterElement.textContent = Math.max(0, value - 1);
                 });
-    
-                // Find all secondary values within the box
-                Array.prototype.slice.call(box.querySelectorAll('.secondary-values div')).forEach(function (secondary) {
-                    // Find the counter inside each secondary value div
-                    var counter = secondary.querySelector('.secondary-counter');
-    
-                    // Find all the buttons inside the secondary value div
-                    Array.prototype.slice.call(secondary.querySelectorAll('button')).forEach(function (button) {
-                        button.addEventListener('click', function () {
-                            // Get the current value of the secondary counter (fallback to 0 if invalid)
-                            var value = parseInt(counter.textContent, 10) || 0;
-    
-                            // Update the secondary counter based on the button clicked
-                            if (this.textContent === '+') {
-                                counter.textContent = value + 1;
-                            } else {
-                                counter.textContent = Math.max(0, value - 1);
-                            }
-                        });
-                    });
+
+                increaseButton.addEventListener('click', function () {
+                    var value = parseInt(counterElement.textContent, 10) || 0;
+                    counterElement.textContent = value + 1;
                 });
-            });
+            }
+
+            // Setup life counters
+            setupCounter('life-decrease-0', 'life-counter-0', 'life-increase-0');
+            setupCounter('life-decrease-1', 'life-counter-1', 'life-increase-1');
+            setupCounter('life-decrease-2', 'life-counter-2', 'life-increase-2');
+            setupCounter('life-decrease-3', 'life-counter-3', 'life-increase-3');
+
+
+            // Setup secondary counters (Box 0)
+            setupCounter('shield-decrease-0', 'shield-counter-0', 'shield-increase-0');
+            setupCounter('water-decrease-0', 'water-counter-0', 'water-increase-0');
+            setupCounter('lightning-decrease-0', 'lightning-counter-0', 'lightning-increase-0');
+
+            // Setup secondary counters (Box 1)
+            setupCounter('shield-decrease-1', 'shield-counter-1', 'shield-increase-1');
+            setupCounter('water-decrease-1', 'water-counter-1', 'water-increase-1');
+            setupCounter('lightning-decrease-1', 'lightning-counter-1', 'lightning-increase-1');
+
+            // Setup secondary counters (Box 2)
+            setupCounter('shield-decrease-2', 'shield-counter-2', 'shield-increase-2');
+            setupCounter('water-decrease-2', 'water-counter-2', 'water-increase-2');
+            setupCounter('lightning-decrease-2', 'lightning-counter-2', 'lightning-increase-2');
+
+            // Setup secondary counters (Box 3)
+            setupCounter('shield-decrease-3', 'shield-counter-3', 'shield-increase-3');
+            setupCounter('water-decrease-3', 'water-counter-3', 'water-increase-3');
+            setupCounter('lightning-decrease-3', 'lightning-counter-3', 'lightning-increase-3');
+
         });
     </script>
-    
 </body>
 </html>
