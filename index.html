@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Counter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2e2e2e;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            width: 45%;
+            height: 45%;
+            margin: 0.5%;
+            background-color: #ffe6e6; /* Cambia colore per ogni box */
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            transform-origin: center;
+        }
+
+        .box:nth-child(2),
+        .box:nth-child(1) {
+            transform: rotate(180deg);
+        }
+
+        .life-counter {
+            font-size: 8em;
+            color: black;
+            margin: 0;
+        }
+
+        .adjust {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .adjust button {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 1.5em;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .secondary-values {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            padding: 10px;
+        }
+
+        .secondary-values div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .secondary-values button {
+            background: none;
+            border: none;
+            color: black;
+            font-size: 1em;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .box:nth-child(1) { background-color: #ffe6e6; }
+        .box:nth-child(2) { background-color: #e6ffe6; }
+        .box:nth-child(3) { background-color: #e6e6ff; }
+        .box:nth-child(4) { background-color: #fff5e6; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="adjust">
+            <button class="decrease">-</button>
+            <p class="life-counter">40</p>
+            <button class="increase">+</button>
+        </div>
+        <div class="secondary-values">
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="adjust">
+            <button class="decrease">-</button>
+            <p class="life-counter">40</p>
+            <button class="increase">+</button>
+        </div>
+        <div class="secondary-values">
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="adjust">
+            <button class="decrease">-</button>
+            <p class="life-counter">40</p>
+            <button class="increase">+</button>
+        </div>
+        <div class="secondary-values">
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="adjust">
+            <button class="decrease">-</button>
+            <p class="life-counter">40</p>
+            <button class="increase">+</button>
+        </div>
+        <div class="secondary-values">
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+            <div>
+                <button class="decrease">-</button>
+                <p class="secondary-counter">0</p>
+                <button class="increase">+</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.box').forEach(function (box) {
+                const lifeCounter = box.querySelector('.life-counter');
+
+                box.querySelectorAll('.adjust button').forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        const value = parseInt(lifeCounter.textContent, 10);
+                        lifeCounter.textContent = this.textContent === '+' ? value + 1 : Math.max(0, value - 1);
+                    });
+                });
+
+                box.querySelectorAll('.secondary-values div').forEach(function (secondary) {
+                    const counter = secondary.querySelector('.secondary-counter');
+
+                    secondary.querySelectorAll('button').forEach(function (button) {
+                        button.addEventListener('click', function () {
+                            const value = parseInt(counter.textContent, 10);
+                            counter.textContent = this.textContent === '+' ? value + 1 : Math.max(0, value - 1);
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
