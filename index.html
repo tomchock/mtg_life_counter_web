@@ -241,52 +241,62 @@
             </div>
         </div>
     </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Function to update counters
-            function setupCounter(decreaseId, counterId, increaseId) {
+            // Funzione per aggiornare i contatori
+            function setupCounter(decreaseId, counterId, increaseId, lifeCounterId = null) {
                 var decreaseButton = document.getElementById(decreaseId);
                 var increaseButton = document.getElementById(increaseId);
                 var counterElement = document.getElementById(counterId);
-
+                var lifeCounterElement = lifeCounterId ? document.getElementById(lifeCounterId) : null;
+    
                 decreaseButton.addEventListener('click', function () {
                     var value = parseInt(counterElement.textContent, 10) || 0;
-                    counterElement.textContent = Math.max(0, value - 1);
+                    if (value > 0) {
+                        counterElement.textContent = value - 1;
+                        if (lifeCounterElement) {
+                            var lifeValue = parseInt(lifeCounterElement.textContent, 10) || 0;
+                            lifeCounterElement.textContent = lifeValue + 1;
+                        }
+                    }
                 });
-
+    
                 increaseButton.addEventListener('click', function () {
                     var value = parseInt(counterElement.textContent, 10) || 0;
                     counterElement.textContent = value + 1;
+                    if (lifeCounterElement) {
+                        var lifeValue = parseInt(lifeCounterElement.textContent, 10) || 0;
+                        lifeCounterElement.textContent = Math.max(0, lifeValue - 1);
+                    }
                 });
             }
-
-            // Setup life counters
+    
+            // Setup life counters (senza influenzare altri valori)
             setupCounter('life-decrease-0', 'life-counter-0', 'life-increase-0');
             setupCounter('life-decrease-1', 'life-counter-1', 'life-increase-1');
             setupCounter('life-decrease-2', 'life-counter-2', 'life-increase-2');
             setupCounter('life-decrease-3', 'life-counter-3', 'life-increase-3');
-
-
+    
             // Setup secondary counters (Box 0)
-            setupCounter('shield-decrease-0', 'shield-counter-0', 'shield-increase-0');
-            setupCounter('water-decrease-0', 'water-counter-0', 'water-increase-0');
-            setupCounter('lightning-decrease-0', 'lightning-counter-0', 'lightning-increase-0');
-
+            setupCounter('shield-decrease-0', 'shield-counter-0', 'shield-increase-0', 'life-counter-0');
+            setupCounter('water-decrease-0', 'water-counter-0', 'water-increase-0', 'life-counter-0');
+            setupCounter('lightning-decrease-0', 'lightning-counter-0', 'lightning-increase-0', 'life-counter-0');
+    
             // Setup secondary counters (Box 1)
-            setupCounter('shield-decrease-1', 'shield-counter-1', 'shield-increase-1');
-            setupCounter('water-decrease-1', 'water-counter-1', 'water-increase-1');
-            setupCounter('lightning-decrease-1', 'lightning-counter-1', 'lightning-increase-1');
-
+            setupCounter('shield-decrease-1', 'shield-counter-1', 'shield-increase-1', 'life-counter-1');
+            setupCounter('water-decrease-1', 'water-counter-1', 'water-increase-1', 'life-counter-1');
+            setupCounter('lightning-decrease-1', 'lightning-counter-1', 'lightning-increase-1', 'life-counter-1');
+    
             // Setup secondary counters (Box 2)
-            setupCounter('shield-decrease-2', 'shield-counter-2', 'shield-increase-2');
-            setupCounter('water-decrease-2', 'water-counter-2', 'water-increase-2');
-            setupCounter('lightning-decrease-2', 'lightning-counter-2', 'lightning-increase-2');
-
+            setupCounter('shield-decrease-2', 'shield-counter-2', 'shield-increase-2', 'life-counter-2');
+            setupCounter('water-decrease-2', 'water-counter-2', 'water-increase-2', 'life-counter-2');
+            setupCounter('lightning-decrease-2', 'lightning-counter-2', 'lightning-increase-2', 'life-counter-2');
+    
             // Setup secondary counters (Box 3)
-            setupCounter('shield-decrease-3', 'shield-counter-3', 'shield-increase-3');
-            setupCounter('water-decrease-3', 'water-counter-3', 'water-increase-3');
-            setupCounter('lightning-decrease-3', 'lightning-counter-3', 'lightning-increase-3');
-
+            setupCounter('shield-decrease-3', 'shield-counter-3', 'shield-increase-3', 'life-counter-3');
+            setupCounter('water-decrease-3', 'water-counter-3', 'water-increase-3', 'life-counter-3');
+            setupCounter('lightning-decrease-3', 'lightning-counter-3', 'lightning-increase-3', 'life-counter-3');
         });
     </script>
 </body>
